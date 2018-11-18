@@ -6,10 +6,11 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 use App\URL;
+use App\VisitorsLog;
 
 class URLController extends Controller
 {
-    public function redirect_slug($slug)
+    public function redirect_slug(Request $request, $slug)
     {
       $customSlug = URL::where('custom_slug', $slug)->first();
 
@@ -20,7 +21,14 @@ class URLController extends Controller
         $slug = URL::where('slug', $slug)->first();
 
         if( $slug ){
+
+          $log = new VisitorsLog;
+          $log->slug_id = $slug->id;
+          $log->ip_add = $request->ip();
+          $log->save();
+
           return redirect($slug->redirect_to_url, 301);
+
         } else {
           abort(404);
         }
