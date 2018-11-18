@@ -15,10 +15,11 @@ class CreateVisitorsLogsTable extends Migration
     {
         Schema::create('visitors_logs', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('slug_id')->unsigned();
-            $table->foreign('slug_id')
-                ->references('id')
-                ->on('u_r_ls');
+            // $table->integer('slug_id')->unsigned();
+            // $table->foreign('slug_id')
+            //     ->references('id')
+            //     ->on('u_r_ls');
+            $table->integer('slug_id');
             $table->string('ip_add');
             $table->timestamps();
         });
