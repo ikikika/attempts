@@ -5,6 +5,7 @@ namespace App\Http\Controllers\API;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
+use Facades\App\Repository\URLcache;
 use App\URL;
 use App\VisitorsLog;
 
@@ -38,7 +39,7 @@ class URLController extends Controller
 
     public function index()
     {
-        $urls = URL::all();
+        $urls = URLcache::all();
 
         return response()->json([
             'success' => true,
