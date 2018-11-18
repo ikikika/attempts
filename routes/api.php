@@ -17,11 +17,16 @@ use Illuminate\Http\Request;
 //     return $request->user();
 // });
 
+
+
 Route::group(['prefix'=>'api'], function(){
   Route::post('login', 'API\UserController@login');
-  Route::post('register', 'API\UserController@register');
 });
 Route::group(['prefix'=>'admin', 'middleware' => 'auth:api'], function(){
+  Route::post('register', 'API\UserController@register');
   Route::post('user', 'API\UserController@user');
   Route::get('logout', 'API\UserController@logout');
+  Route::resource('urls', 'API\URLController');
 });
+
+Route::get('/{slug}', 'API\URLController@redirect_slug');
