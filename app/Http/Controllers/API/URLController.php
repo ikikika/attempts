@@ -16,6 +16,10 @@ class URLController extends Controller
       $customSlug = URL::where('custom_slug', $slug)->first();
 
       if( $customSlug ){
+        $log = new VisitorsLog;
+        $log->slug_id = $customSlug->id;
+        $log->ip_add = $request->ip();
+        $log->save();
         return redirect($customSlug->redirect_to_url, 301);
       } else {
 
