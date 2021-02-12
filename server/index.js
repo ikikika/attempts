@@ -19,11 +19,9 @@ const {
   AccountBalanceQuery,
 } = require("@hashgraph/sdk");
 
-const getChartData = require("./getChartData");
+// const getChartData = require("./getChartData");
 
 let users = require("./users.json");
-let chartValues = require("./chartvalues.json");
-let transactions = require("./transactions.json");
 
 app.use(cors());
 app.use(bodyParser.json());
@@ -84,26 +82,18 @@ const authenticateJWT = (req, res, next) => {
   }
 };
 
-app.get("/dashboard", authenticateJWT, (req, res) => {
-  res.json(chartValues);
-});
+// app.get("/dashboard", authenticateJWT, (req, res) => {
+//   // res.json(chartValues);
+// });
 
 app.post("/transaction", authenticateJWT, async (req, res, next) => {
-  // const txn = req.body;
-  // transactions.push(txn);
-  // res.send("Transaction added successfully");
-  // res.send(req);
-  // const fromUser = users.find((u) => {
-  //   return u.username === req.user.username;
-  // });
-  // const toUser = users.find((u) => {
-  //   return u.username === req.body.toUser;
-  // });
-  // console.log(toUser);
   let operatorId = "";
   let operatorKey = "";
   let accountId2 = "";
   let privateKey2 = "";
+
+  const qty = Math.abs(parseInt(req.body.quantity));
+
   if (req.body.action === "long") {
     operatorId = AccountId.fromString(process.env.ACCOUNT_ID);
     operatorKey = PrivateKey.fromString(process.env.PRIVATE_KEY);
@@ -116,23 +106,30 @@ app.post("/transaction", authenticateJWT, async (req, res, next) => {
 
     accountId2 = AccountId.fromString(process.env.ACCOUNT_ID);
     privateKey2 = PrivateKey.fromString(process.env.PRIVATE_KEY);
+  } else if (qty < 0) {
+    res.send("Invalid transaction");
+    return;
   } else {
     res.send("Invalid transaction");
     return;
   }
-  const qty = Math.abs(parseInt(req.body.quantity));
-  let client = Client.forTestnet();
-  const newTokenId = "0.0.321939";
-  client.setOperator(operatorId, operatorKey);
+  try {
+    let client = Client.forTestnet();
+    const newTokenId = "0.0.321939";
+    client.setOperator(operatorId, operatorKey);
 
-  const transferTx = await new TransferTransaction()
-    .addTokenTransfer(newTokenId, operatorId, -qty)
-    .addTokenTransfer(newTokenId, accountId2, qty)
-    .execute(client);
+    const transferTx = await new TransferTransaction()
+      .addTokenTransfer(newTokenId, operatorId, -qty)
+      .addTokenTransfer(newTokenId, accountId2, qty)
+      .execute(client);
 
-  const transferReceipt = await transferTx.getReceipt(client);
+    const transferReceipt = await transferTx.getReceipt(client);
 
-  res.send(transferReceipt);
+    res.send(transferReceipt);
+  } catch (err) {
+    res.send(err);
+  }
+
   // const accountBalance = await new AccountBalanceQuery()
   //   .setAccountId(AccountId.fromString(process.env.ACCOUNT_ID_2))
   //   .execute(client);
@@ -159,5 +156,5 @@ app.get("/balance", authenticateJWT, async (req, res) => {
 });
 
 app.get("/transaction", authenticateJWT, (req, res) => {
-  res.json(transactions);
+  // res.json(transactions);
 });
