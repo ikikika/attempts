@@ -24,6 +24,7 @@ export default function Dashboard() {
   const [isDisabled, setIsDisabled] = useState(false);
   const [txnQty, setTxnqty] = useState("");
   const [balance, setBalance] = useState(0);
+  const [newBalance, setNewBalance] = useState(0);
   const [txnMessage, setTxnMessage] = useState("");
   const [txnHistory, setTxnHistory] = useState([]);
   const [modalInformation, setModalInformation] = useState({
@@ -89,7 +90,7 @@ export default function Dashboard() {
       setTxnMessage("Quantity must be more than 1");
       return;
     }
-
+    setNewBalance(parseInt(balance) + parseInt(txnQty));
     await setModalInformation({ show: true, type: "Make Payment" });
   };
 
@@ -124,6 +125,7 @@ export default function Dashboard() {
       setTxnMessage("You cannot sell more than what you own");
       return;
     }
+    setNewBalance(parseInt(balance) - parseInt(txnQty));
     await setModalInformation({ show: true, type: "Receive Payment" });
   };
 
@@ -361,14 +363,7 @@ export default function Dashboard() {
             Close
           </Button>
 
-          <h5>
-            New total:{" "}
-            {modalInformation.type !== "Receive Payment"
-              ? parseInt(balance) + parseInt(txnQty)
-              : modalInformation.type !== "Make Payment"
-              ? parseInt(balance) - parseInt(txnQty)
-              : ""}
-          </h5>
+          <h5>New total: {newBalance}</h5>
           {modalInformation.type === "Make Payment" ? (
             <Button variant="primary" onClick={makePayment}>
               Confirm
