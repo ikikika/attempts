@@ -34,8 +34,8 @@ const Canvas4 = () => {
                   width={shape.width}
                   style={{
                     position: "absolute",
-                    top: shape.top,
-                    left: shape.left,
+                    top: parseInt(shape.top),
+                    left: parseInt(shape.left),
                   }}
                   hoverColor={shape.hoverColor}
                   text={shape.text}
