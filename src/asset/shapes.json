@@ -1,0 +1,74 @@
+[{
+        "id": 1,
+        "fill": "BlueViolet",
+        "points": "0,0 0,200 100,300 100,400 300,400 300,0",
+        "height": 400,
+        "width": 300,
+        "top": 100,
+        "left": 200,
+        "hoverColor": "DarkBlue",
+        "text": "Saigon",
+        "link": ""
+    },
+
+    {
+        "id": 3,
+        "fill": "pink",
+        "points": "0,0 0,300 100,400 100,300",
+        "height": 400,
+        "width": 100,
+        "top": 400,
+        "left": 600,
+        "hoverColor": "blue",
+        "text": "Danang",
+        "link": "https://google.com"
+    },
+    {
+        "id": 4,
+        "fill": "aqua",
+        "points": "0,0 0,200 100,400 500,400 500,200 200,200 200,100 100,0",
+        "height": 400,
+        "width": 500,
+        "top": 400,
+        "left": 0,
+        "hoverColor": "salmon",
+        "text": "Hue",
+        "link": ""
+    },
+    {
+        "id": 5,
+        "fill": "orange",
+        "points": "0,0 0,200 100,400 500,400 500,200 200,200 200,100 100,0",
+        "height": 400,
+        "width": 500,
+        "top": 400,
+        "left": 0,
+        "hoverColor": "GreenYellow",
+        "text": "Dalat",
+        "link": ""
+    },
+    {
+        "id": 6,
+        "fill": "blue",
+        "points": "0,0 100,400 300,400 300,0",
+        "height": 400,
+        "width": 300,
+        "top": -100,
+        "left": -200,
+        "hoverColor": "GreenYellow",
+        "text": "Vung Tau",
+        "link": ""
+    },
+    {
+        "id": 2,
+        "fill": "lime",
+        "points": "0,0 0,100 100,400 400,200 100,0",
+        "height": 400,
+        "width": 400,
+        "top": 100,
+        "left": 600,
+        "hoverColor": "red",
+        "text": "Hanoi",
+        "link": ""
+    }
+]

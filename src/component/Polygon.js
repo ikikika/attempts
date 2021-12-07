@@ -1,6 +1,15 @@
 import React, { useState } from "react";
 
-const Polygon = ({ fill, points, height, width, style, hoverColor, text }) => {
+const Polygon = ({
+  fill,
+  points,
+  height,
+  width,
+  style,
+  hoverColor,
+  text,
+  link,
+}) => {
   const [color, SetColor] = useState(fill);
 
   return (
@@ -15,7 +24,11 @@ const Polygon = ({ fill, points, height, width, style, hoverColor, text }) => {
             SetColor(fill);
           }}
           onClick={() => {
-            alert(`You clicked on ${text}`);
+            if (link) {
+              window.location.href = link;
+            } else {
+              alert(`You clicked on ${text}`);
+            }
           }}
         />
       </svg>

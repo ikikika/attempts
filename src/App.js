@@ -1,5 +1,6 @@
 import React from "react";
 import Canvas from "./component/Canvas4";
+import "./App.css";
 
 const App = () => {
   return (

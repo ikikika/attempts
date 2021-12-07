@@ -36,3 +36,17 @@
     transform: rotate(360deg);
   }
 }
+
+.sidebar a{
+  text-decoration: none;
+  display: block;
+  
+}
+
+.sidebar a:hover{
+  background-color: #EEE8AA;
+}
+
+.sidebar .active{
+  background: #FFE4B5;
+}
