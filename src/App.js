@@ -6,7 +6,7 @@ const App = () => {
     <div
       style={{
         width: "800px",
-        height: "500px",
+        height: "600px",
         backgroundColor: "#000",
         position: "absolute",
         top: 0,
