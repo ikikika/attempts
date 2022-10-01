@@ -1,5 +1,9 @@
 import React from "react";
 
+import ArticleData from "../data/article-316751.json";
+
+console.log(ArticleData);
+
 const ArticlePage = () => {
     return <div>
         <h1>content1</h1>

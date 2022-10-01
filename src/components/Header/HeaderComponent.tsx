@@ -10,6 +10,7 @@ import HeaderData from "../../data/header.json";
 import useScrollPosition from "../../hooks/useScrollPosition";
 import useCheckMobileScreen from "../../hooks/useCheckMobileScreen";
 import HeaderNavIconWithLabel from "./HeaderNavIconWithLabel";
+import Fade from "react-bootstrap/Fade";
 
 const styles = {
   logo: {
@@ -20,8 +21,10 @@ const styles = {
   },
 };
 
-const SecondaryNav = () => {
+const SecondaryNav = ({fontSize}: {fontSize?: number}) => {
   const [show, setShow] = useState(false);
+  const isMobile = useCheckMobileScreen();
+
   useEffect(() => {
     setShow(true);
     return () => {
@@ -30,19 +33,24 @@ const SecondaryNav = () => {
   }, []);
 
   return (
-    <Navbar.Collapse id="basic-navbar-nav" className={`${!show ? "fade" : ""}`}>
-      <Nav className="w-100 pb-lg-2 justify-content-between">
-        {HeaderData.map((data) => (
-          <Nav.Link
-            href="#home"
-            key={data.field_id}
-            className="p-lg-0 p-3 border-xl-top"
-          >
-            {data.title}
-          </Nav.Link>
-        ))}
-      </Nav>
-    </Navbar.Collapse>
+    <Fade in={show && !isMobile}>
+      <Navbar.Collapse
+        id="basic-navbar-nav"
+        className={`${!show ? "fade" : ""}`}
+      >
+        <Nav className="w-100 pb-lg-2 justify-content-between ">
+          {HeaderData.map((data) => (
+            <Nav.Link
+              key={data.field_id}
+              className="p-lg-2 p-3 border-xl-top"
+              style={fontSize && !isMobile? {fontSize: fontSize} : {}}
+            >
+              {data.title}
+            </Nav.Link>
+          ))}
+        </Nav>
+      </Navbar.Collapse>
+    </Fade>
   );
 };
 
@@ -93,16 +101,16 @@ const HeaderComponent = () => {
               <Nav className="flex-row order-2 order-lg-2">
                 <HeaderNavIconWithLabel
                   headerState={headerState}
-                  icon={<PersonFill size={30} />}
+                  icon={<PersonFill size={20} />}
                   label="Sign In"
                 />
                 <HeaderNavIconWithLabel
                   headerState={headerState}
-                  icon={<Search size={30} />}
+                  icon={<Search size={20} />}
                   label="Search"
                 />
               </Nav>
-              {headerState === 2 && <SecondaryNav />}
+              {headerState === 2 && <SecondaryNav fontSize={14}/>}
               <Navbar.Toggle
                 aria-controls="basic-navbar-nav"
                 className="order-lg-3 order-0"
