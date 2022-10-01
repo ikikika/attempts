@@ -1,0 +1,229 @@
+[
+   {
+      "title": "Singapore",
+      "uri": "node/128666",
+      "alias": "singapore",
+      "weight": "-50",
+      "enabled": true,
+      "options": {
+         "attributes": {
+            "class": [
+               ""
+            ]
+         },
+         "modal": [],
+         "query": []
+      },
+      "field_id": "128666",
+      "field_type": "landing_page",
+      "image": null,
+      "absolute_url": "https://www.todayonline.com/singapore"
+   },
+   {
+      "title": "World",
+      "uri": "node/169701",
+      "alias": "world",
+      "weight": "-49",
+      "enabled": true,
+      "options": {
+         "attributes": {
+            "target": "_self",
+            "class": [
+               ""
+            ]
+         },
+         "modal": [],
+         "query": []
+      },
+      "field_id": "169701",
+      "field_type": "landing_page",
+      "image": null,
+      "absolute_url": "https://www.todayonline.com/world"
+   },
+   {
+      "title": "Minute",
+      "uri": "node/170376",
+      "alias": "minute",
+      "weight": "-48",
+      "enabled": true,
+      "options": {
+         "attributes": {
+            "class": [
+               "minute"
+            ]
+         },
+         "modal": [],
+         "query": []
+      },
+      "field_id": "170376",
+      "field_type": "landing_page",
+      "image": null,
+      "absolute_url": "https://www.todayonline.com/minute"
+   },
+   {
+      "title": "Big Read",
+      "uri": "node/169706",
+      "alias": "big-read",
+      "weight": "-47",
+      "enabled": true,
+      "options": {
+         "attributes": {
+            "target": "_self",
+            "class": [
+               ""
+            ]
+         },
+         "modal": [],
+         "query": []
+      },
+      "field_id": "169706",
+      "field_type": "landing_page",
+      "image": null,
+      "absolute_url": "https://www.todayonline.com/big-read"
+   },
+   {
+      "title": "Gen Y Speaks",
+      "uri": "node/169716",
+      "alias": "gen-y-speaks",
+      "weight": "-46",
+      "enabled": true,
+      "options": {
+         "attributes": {
+            "target": "_self",
+            "class": [
+               ""
+            ]
+         },
+         "modal": [],
+         "query": []
+      },
+      "field_id": "169716",
+      "field_type": "landing_page",
+      "image": null,
+      "absolute_url": "https://www.todayonline.com/gen-y-speaks"
+   },
+   {
+      "title": "Adulting 101",
+      "uri": "node/1691926",
+      "alias": "adulting-101",
+      "weight": "-45",
+      "enabled": true,
+      "options": {
+         "attributes": {
+            "class": [
+               ""
+            ]
+         },
+         "modal": [],
+         "query": []
+      },
+      "field_id": "1691926",
+      "field_type": "landing_page",
+      "image": null,
+      "absolute_url": "https://www.todayonline.com/adulting-101"
+   },
+   {
+      "title": "Commentary",
+      "uri": "node/169711",
+      "alias": "commentary",
+      "weight": "-44",
+      "enabled": true,
+      "options": {
+         "attributes": {
+            "target": "_self",
+            "class": [
+               ""
+            ]
+         },
+         "modal": [],
+         "query": []
+      },
+      "field_id": "169711",
+      "field_type": "landing_page",
+      "image": null,
+      "absolute_url": "https://www.todayonline.com/commentary"
+   },
+   {
+      "title": "Voices",
+      "uri": "node/169721",
+      "alias": "voices",
+      "weight": "-43",
+      "enabled": true,
+      "options": {
+         "attributes": {
+            "target": "_self",
+            "class": [
+               ""
+            ]
+         },
+         "modal": [],
+         "query": []
+      },
+      "field_id": "169721",
+      "field_type": "landing_page",
+      "image": null,
+      "absolute_url": "https://www.todayonline.com/voices"
+   },
+   {
+      "title": "Watch",
+      "uri": "node/170021",
+      "alias": "watch",
+      "weight": "-42",
+      "enabled": true,
+      "options": {
+         "attributes": {
+            "class": [
+               "watch-landing-page"
+            ]
+         },
+         "modal": [],
+         "query": []
+      },
+      "field_id": "170021",
+      "field_type": "landing_page",
+      "image": null,
+      "absolute_url": "https://www.todayonline.com/watch"
+   },
+   {
+      "title": "Brand Spotlight",
+      "uri": "node/169736",
+      "alias": "brand-spotlight",
+      "weight": "-41",
+      "enabled": true,
+      "options": {
+         "attributes": {
+            "target": "_self",
+            "class": [
+               "search-menu-link"
+            ]
+         },
+         "modal": [],
+         "query": []
+      },
+      "field_id": "169736",
+      "field_type": "landing_page",
+      "image": null,
+      "absolute_url": "https://www.todayonline.com/brand-spotlight"
+   },
+   {
+      "title": "8 Days",
+      "uri": "node/169726",
+      "alias": "8days",
+      "weight": "-40",
+      "enabled": true,
+      "options": {
+         "attributes": {
+            "target": "_self",
+            "class": [
+               ""
+            ]
+         },
+         "modal": [],
+         "query": []
+      },
+      "field_id": "169726",
+      "field_type": "landing_page",
+      "image": null,
+      "absolute_url": "https://www.todayonline.com/8days"
+   }
+]
