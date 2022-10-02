@@ -11,12 +11,14 @@ import SidebarPopularComponent from "./SidebarPopularComponent";
 import RelatedTopicsComponent from "./RelatedTopicsComponent";
 import ArticleContentBodyComponent from "./ArticleContentBodyComponent";
 import ReadAlsoProps from "../../types/ReadAlsoProps";
+import AuthorDataType from "../../types/AuthorDataType";
+import BylineComponent from "./BylineComponent";
 
 interface Props {
   title: string;
   publishedDate: string;
   updatedDate: string;
-  author: string;
+  authorData: AuthorDataType;
   mediaImageData: MediaImageType;
   articleContent: string | undefined;
   sidebarData: SidebarProps[];
@@ -29,7 +31,7 @@ const ArticleContentComponent = (props: Props) => {
     title,
     publishedDate,
     updatedDate,
-    author,
+    authorData,
     mediaImageData,
     articleContent,
     sidebarData,
@@ -41,16 +43,16 @@ const ArticleContentComponent = (props: Props) => {
     <Container className="mt-2">
       <Row>
         <Col lg={{ span: 12, order: 1 }}>
-          <h1 style={{ backgroundColor: "red" }}>{title}</h1>
+          <h1 className="h1 h1--page-title">{title}</h1>
         </Col>
       </Row>
       <Row>
         <Col lg={{ span: 4, order: 3 }}>
-          <div style={{ backgroundColor: "green" }}>
-            <div>{author}</div>
-            <div>published {publishedDate}</div>
-            <div>updated {updatedDate}</div>
-          </div>
+          <BylineComponent
+            publishedDate={publishedDate}
+            updatedDate={updatedDate}
+            authorData={authorData}
+          />
         </Col>
         <Col lg={{ span: 8, order: 2 }}>
           <ArticleHeroImageComponent mediaImageData={mediaImageData} />
@@ -63,7 +65,10 @@ const ArticleContentComponent = (props: Props) => {
       </Row>
       <Row>
         <Col lg={{ span: 8 }}>
-          <ArticleContentBodyComponent contentBodyData={articleContent} readAlsoData={readAlsoData}/>
+          <ArticleContentBodyComponent
+            contentBodyData={articleContent}
+            readAlsoData={readAlsoData}
+          />
           <RelatedTopicsComponent topicsData={topicsData} />
           <div style={{ width: "100%", backgroundColor: "orange" }}>
             read more

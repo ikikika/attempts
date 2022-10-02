@@ -3,6 +3,7 @@ import ArticleContentComponent from "../components/article/ArticleContentCompone
 
 import ArticleData from "../data/article-316751.json";
 import SidebarPopularData from "../data/sideBar_popular.json";
+import AuthorDataType from "../types/AuthorDataType";
 import SidebarProps from "../types/SideBarProps";
 
 const ArticlePage = () => {
@@ -17,12 +18,19 @@ const ArticlePage = () => {
     return data.name;
   });
 
+  let authorData: AuthorDataType = {
+    title: ArticleData[0].byline_detail[0].title,
+    url: ArticleData[0].byline_detail[0].url,
+    thumbnail:
+      "https://onecms-res.cloudinary.com/image/upload/s--3_InCk2H--/c_fill%2Cg_auto%2Ch_220%2Cw_220/f_auto%2Cq_auto/v1/tdy-migration/illustrated_byline_peitingnew.jpg?itok=k0KIW9FU",
+  };
+
   return (
     <ArticleContentComponent
       title={ArticleData[0].title}
       publishedDate={ArticleData[0].publishdate}
       updatedDate={ArticleData[0].lastupdated}
-      author={ArticleData[0].byline_detail[0].title}
+      authorData={authorData}
       mediaImageData={{
         src: ArticleData[0].image.media_image,
         description: ArticleData[0].image.description,
