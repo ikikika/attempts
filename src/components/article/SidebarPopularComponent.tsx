@@ -3,7 +3,8 @@ import Image from "react-bootstrap/Image";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 
-import SideBarPropsType from "../../types/SideBarPropsType";
+import { useAppSelector } from "../../hooks/reduxHooks";
+import { RootState } from "../../redux/store";
 
 const styles = {
   sectionLabel: {
@@ -19,33 +20,37 @@ const styles = {
   },
 };
 
-const SidebarPopularComponent = ({
-  sidebarData,
-}: {
-  sidebarData: SideBarPropsType[];
-}) => {
+const SidebarPopularComponent = () => {
+  const sidebar = useAppSelector((state: RootState) => state.sidebar);
+
   return (
     <div className="mb-5">
       <Row>
         <Col>
-          <div className="pt-0 pb-3 mb-0" style={styles.sectionLabel}>Popular</div>
+          <div className="pt-0 pb-3 mb-0" style={styles.sectionLabel}>
+            Popular
+          </div>
         </Col>
       </Row>
-      {sidebarData.map((data, index) => (
+      {sidebar.data.map((data, index) => (
         <React.Fragment key={index}>
-          <Row >
+          <Row>
             <Col xs={5} md={3} lg={5}>
               <a href={data.click_through_url}>
                 <Image fluid src={data.thumbnail} />
               </a>
             </Col>
             <Col xs={7} md={9} lg={7}>
-              <a href={data.click_through_url} className="d-inline-block" style={styles.title}>
+              <a
+                href={data.click_through_url}
+                className="d-inline-block"
+                style={styles.title}
+              >
                 {data.title}
               </a>
             </Col>
           </Row>
-          {sidebarData.length > index + 1 && <hr />}
+          {sidebar.data.length > index + 1 && <hr />}
         </React.Fragment>
       ))}
     </div>

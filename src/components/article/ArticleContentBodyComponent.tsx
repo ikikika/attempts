@@ -4,7 +4,7 @@ import parse from "html-react-parser";
 import ReadAlsoPropsType from "../../types/ReadAlsoPropsType";
 
 interface Props {
-  contentBodyData: string | undefined;
+  contentBodyData?: string;
   readAlsoData: ReadAlsoPropsType[];
 }
 
@@ -45,7 +45,7 @@ const ArticleContentBodyComponent = (props: Props) => {
   const { contentBodyData, readAlsoData } = props;
 
   const parsedBody = parse(
-    contentBodyData !== undefined ? contentBodyData : ""
+    contentBodyData ? contentBodyData : ""
   );
 
   let bodyWithReadAlso: JSX.Element[] = [];

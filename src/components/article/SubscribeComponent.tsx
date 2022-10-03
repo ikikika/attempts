@@ -6,8 +6,11 @@ import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import InputGroup from "react-bootstrap/InputGroup";
 import { ChevronRight, Telegram } from "react-bootstrap-icons";
+import parse from "html-react-parser";
 
 import subscribeImage from "../../assets/images/newsletter-sub-new-image.png";
+import { useAppSelector } from "../../hooks/reduxHooks";
+import { RootState } from "../../redux/store";
 
 const styles = {
   subscribeLabel: {
@@ -67,19 +70,22 @@ const styles = {
     fontFamily: "var(--ff-sub-description)",
     lineHeight: "var(--lh-sub-description)",
   },
-  redText:{
-    color: 'var(--c-primary)'
-  }
+  redText: {
+    color: "var(--c-primary)",
+  },
 };
 
 const SubscribeComponent = () => {
+  const article = useAppSelector(
+    (state: RootState) => state.article.data.subscriptionBoxData
+  );
+
   return (
     <Row>
       <Col sm={7} xl={6}>
         <div className="d-flex flex-column border border-1">
           <div className="py-3 ps-4" style={styles.subscribeLabel}>
-            Stay in the know. Anytime. <br />
-            Anywhere.
+            <div className="w-75">{article.title}</div>
           </div>
 
           <Row
@@ -87,8 +93,7 @@ const SubscribeComponent = () => {
             style={styles.subscribeText}
           >
             <Col xs={7} xl={6} className="pe-1">
-              Subscribe to get daily news updates, insights and must reads
-              delivered straight to your inbox.
+              {parse(article.body ? article.body : "")}
             </Col>
             <Col xs={5} xl={6} className="position-relative">
               <Image
@@ -104,8 +109,8 @@ const SubscribeComponent = () => {
             <Col>
               <InputGroup className="p-3 pb-3 pt-xl-3">
                 <Form.Control
-                  placeholder="Enter your email address"
-                  aria-label="Enter your email address"
+                  placeholder={article.placeholder}
+                  aria-label={article.placeholder}
                   aria-describedby="subscribe-input-field"
                   style={styles.subscribeInput}
                   className="border border-top-0 border-end-0 border-start-0 rounded-0"
@@ -113,18 +118,16 @@ const SubscribeComponent = () => {
                 <Button
                   variant="outline-secondary"
                   id="subscribe-input-field"
-                  className="rounded-0 border-0 px-3 py-2"
+                  className="rounded-0 border-0 px-3 py-2 text-uppercase"
                   style={styles.subscribeButton}
                 >
-                  SUBSCRIBE <ChevronRight />
+                  {article.label} <ChevronRight />
                 </Button>
               </InputGroup>
             </Col>
           </Row>
           <div className="mt-1 px-3 pb-3" style={styles.subscribeDisclaimer}>
-            By clicking subscribe, I agree for my personal data to be used to
-            send me TODAY newsletters, promotional offers and for research and
-            analysis.
+            {article.sub_description}
           </div>
         </div>
       </Col>

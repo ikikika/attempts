@@ -31,7 +31,7 @@ const styles = {
 const ReadMoreComponent = () => {
   return (
     <a
-      href="/"
+      href="https://www.todayonline.com/taxonomy/term/14366"
       style={styles.wrapper}
       className="px-4 py-3 mb-4 d-flex flex-row justify-content-between align-items-center"
     >
