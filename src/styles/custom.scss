@@ -41,9 +41,6 @@ a:hover {
   color: var(--c-link-hover) !important;
 }
 
-.read-also-wrapper {
-  width: 238px;
-}
 
 @media only screen and (max-width: 920px) {
   nav .navbar-collapse {
@@ -72,7 +69,4 @@ a:hover {
     display: none;
   }
 
-  .read-also-wrapper {
-    width: 50%;
-  }
 }

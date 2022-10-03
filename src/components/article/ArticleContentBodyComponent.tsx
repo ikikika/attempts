@@ -11,6 +11,7 @@ interface Props {
 const styles = {
   readAlsoWrapper: {
     backgroundColor: "var(--c-muted-accent-light)",
+    maxWidth: 208
   },
   readAlsoLabel: {
     fontSize: "var(--fs-text-xs)",
@@ -31,7 +32,7 @@ const ReadAlsoComponent = ({
   readAlsoSingleData: ReadAlsoPropsType;
 }) => {
   return (
-    <div className="read-also-wrapper mb-3 ms-3 p-3 float-end" style={styles.readAlsoWrapper}>
+    <div className="w-50 mb-3 ms-3 p-3 float-end" style={styles.readAlsoWrapper}>
       <h4 className="text-uppercase pb-0 mb-1" style={styles.readAlsoLabel}>Read Also</h4>
       <a href={readAlsoSingleData.link} className="d-inline-block" style={styles.readAlsoLink}>
         {readAlsoSingleData.title}

@@ -4,8 +4,9 @@ import App from "./App";
 import "./styles/reset.css";
 
 import "./assets/fonts/Proxima-Nova-Reg-It.otf";
-import "./assets/fonts/Proxima-Nova-Sbold.otf"
-import "./assets/fonts/Proxima-Nova-Light.otf"
+import "./assets/fonts/Proxima-Nova-Sbold.otf";
+import "./assets/fonts/Proxima-Nova-Light.otf";
+import "./assets/fonts/ProximaNova-Regular.ttf";
 import "./assets/fonts/Graphik-Medium.ttf";
 import "./assets/fonts/Graphik-Semibold.ttf";
 import "./styles/custom.scss";
