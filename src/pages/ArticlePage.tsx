@@ -13,6 +13,7 @@ import ReadMoreComponent from "../components/article/ReadMoreComponent";
 import SubscribeComponent from "../components/article/SubscribeComponent";
 import { useAppSelector } from "../hooks/reduxHooks";
 import { RootState } from "../redux/store";
+import ScrollToTopComponent from "../components/common/ScrollToTopComponent";
 
 const styles = {
   articleTitle: {
@@ -73,6 +74,7 @@ const ArticlePage = () => {
           <SubscribeComponent />
         </Col>
       </Row>
+      <ScrollToTopComponent />
     </Container>
   );
 };
