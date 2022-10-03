@@ -132,7 +132,7 @@ const SubscribeComponent = () => {
       <Col sm={5} xl={6}>
         <a
           href="https://t.me/todayonlinesg"
-          className="d-flex flex-column justify-content-center align-items-center h-100"
+          className="p-5 p-lg-0 d-flex flex-column justify-content-center align-items-center h-100"
           style={styles.telegramWrapper}
         >
           <div

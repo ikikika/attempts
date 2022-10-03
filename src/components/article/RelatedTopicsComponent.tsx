@@ -28,7 +28,8 @@ const RelatedTopicsComponent = ({
   topicsData: TopicsDataType[];
 }) => {
   return (
-    <div className="pt-0 border-top-0 pb-3 mb-4" style={styles.wrapper}>
+    <div className="pt-0 pb-3 mb-4" style={styles.wrapper}>
+      <hr className="d-lg-none"/>
       <div className="text-uppercase mb-4" style={styles.sectionLabel}>Related Topics</div>
       {topicsData.map((data, index) => (
         <a

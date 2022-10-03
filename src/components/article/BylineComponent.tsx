@@ -47,8 +47,8 @@ const styles = {
 const BylineComponent = (props: Props) => {
   const { publishedDate, updatedDate, authorData } = props;
   return (
-    <div className="d-flex flex-column">
-      <div className="mb-4 d-flex flex-md-column align-items-md-start flex-lg-row align-items-lg-center">
+    <div className="d-flex flex-column mb-3">
+      <div className="mb-2 mb-lg-4 d-flex flex-column align-items-md-start flex-lg-row align-items-lg-center">
         <a href={authorData.url}>
           <Image
             src={authorData.thumbnail}
@@ -81,7 +81,9 @@ const BylineComponent = (props: Props) => {
         </span>
         {moment(updatedDate).format("MMMM DD, YYYY")}
       </div>
+      <div className="d-none d-lg-inline">
       <SocialMediaWrapperComponent />
+      </div>
     </div>
   );
 };

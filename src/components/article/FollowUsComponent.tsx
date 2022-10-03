@@ -15,7 +15,7 @@ const styles = {
 
 const FollowUsComponent = () => {
   return (
-    <div className="p-2 mb-4 text-center" style={styles.followUs}>
+    <div className="p-2 mb-2 mb-lg-4 text-center" style={styles.followUs}>
       Follow us on{" "}
       <a
         href="https://www.instagram.com/todayonline/"
