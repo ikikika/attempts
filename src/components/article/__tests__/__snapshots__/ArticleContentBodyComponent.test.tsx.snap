@@ -1,0 +1,60 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ArticleContentBodyComponent matches snapshot 1`] = `
+Array [
+  <p>
+    lorem
+  </p>,
+  <p>
+    ipsum
+  </p>,
+  <p>
+    dolor
+  </p>,
+  <p>
+    sit
+  </p>,
+  <p>
+    amet
+  </p>,
+  <p>
+    consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua
+  </p>,
+  <div
+    className="w-50 mb-3 ms-3 p-3 float-end"
+    style={
+      Object {
+        "backgroundColor": "var(--c-muted-accent-light)",
+        "maxWidth": 208,
+      }
+    }
+  >
+    <h4
+      className="text-uppercase pb-0 mb-1"
+      style={
+        Object {
+          "color": "var(--c-primary)",
+          "fontFamily": "var(--ff-text-xs)",
+          "fontSize": "var(--fs-text-xs)",
+          "fontWeight": 600,
+        }
+      }
+    >
+      Read Also
+    </h4>
+    <a
+      className="d-inline-block"
+      href="test.com"
+      style={
+        Object {
+          "fontFamily": "var(--ff-text-xs)",
+          "fontSize": "var(--fs-text-xs)",
+          "lineHeight": "var(--lh-h5)",
+        }
+      }
+    >
+      ipsum
+    </a>
+  </div>,
+]
+`;

@@ -1,0 +1,70 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ReadMoreComponent matches snapshot 1`] = `
+<a
+  className="px-4 py-3 mb-4 d-flex flex-row justify-content-between align-items-center"
+  href="https://www.todayonline.com/taxonomy/term/14366"
+  style={
+    Object {
+      "backgroundColor": "var(--c-muted)",
+    }
+  }
+>
+  <div
+    className="d-flex flex-column flex-md-row align-items-center"
+  >
+    <span
+      className="me-1"
+      style={
+        Object {
+          "fontFamily": "var(--ff-article-cta)",
+          "fontSize": "var(--fs-article-cta)",
+          "fontWeight": 500,
+          "lineHeight": "var(--lh-article-cta)",
+        }
+      }
+    >
+      Read more of the latest in
+    </span>
+    <span
+      style={
+        Object {
+          "color": "var(--c-primary)",
+          "fontFamily": "var(--ff-category-l)",
+          "fontSize": "var(--fs-category-l)",
+          "fontWeight": 600,
+          "lineHeight": "var(--lh-category-l)",
+          "textTransform": "uppercase",
+        }
+      }
+    >
+      Singapore
+    </span>
+  </div>
+  <div
+    style={
+      Object {
+        "color": "var(--c-primary)",
+        "fontFamily": "var(--ff-button-s)",
+        "fontSize": "var(--fs-button-s)",
+        "fontWeight": 500,
+        "lineHeight": "var(--lh-button-s)",
+      }
+    }
+  >
+    Explore now 
+    <svg
+      fill="currentColor"
+      height="1em"
+      viewBox="0 0 16 16"
+      width="1em"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z"
+        fillRule="evenodd"
+      />
+    </svg>
+  </div>
+</a>
+`;
