@@ -104,7 +104,7 @@ md - 144 state 4 with 2 share
         onToggle={(e) => {
           setMenuExpanded(!menuExpanded);
         }}
-        className="border-lg-bottom sticky-top"
+        className="border-bottom sticky-top"
       >
         <Container>
           <Nav className="d-flex flex-column w-100 justify-content-between">

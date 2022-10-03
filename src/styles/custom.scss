@@ -1,6 +1,18 @@
 @import "~bootstrap/scss/bootstrap.scss";
 @import "constants.scss";
 
+
+body {
+  background-color: var(--c-body-bg);
+  color: var(--c-text);
+  overflow-x: hidden;
+  font-size: var(--fs-text);
+  font-weight: var(--fw-text);
+  font-family: var(--ff-text);
+  line-height: var(--lh-text);
+  font-weight: 300;
+}
+
 .navbar,
 .navbar-nav {
   background-color: var(--c-background);
@@ -15,9 +27,6 @@ nav .navbar-toggler:focus {
   color: var(--c-text);
   font-weight: 600;
 }
-.border-lg-bottom {
-  border-bottom: $border-width solid $border-color !important;
-}
 
 .article-content-body li {
   padding: 0 0 0 15px;
@@ -26,6 +35,7 @@ nav .navbar-toggler:focus {
   font-size: var(--fs-text-m);
   line-height: var(--lh-text-m);
   position: relative;
+  list-style-type: square;
 }
 
 .article-content-body li::marker {
