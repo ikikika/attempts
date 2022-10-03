@@ -4,18 +4,20 @@ import ArticleContentComponent from "../components/article/ArticleContentCompone
 import ArticleData from "../data/article-316751.json";
 import SidebarPopularData from "../data/sideBar_popular.json";
 import AuthorDataType from "../types/AuthorDataType";
-import SidebarProps from "../types/SideBarProps";
+import SideBarPropsType from "../types/SideBarPropsType";
+import TopicsDataType from "../types/TopicsDataType";
 
 const ArticlePage = () => {
-  let sidebarData: SidebarProps[] = SidebarPopularData.items.map((data) => {
+  let sidebarData: SideBarPropsType[] = SidebarPopularData.items.map((data) => {
     return {
       title: data.title,
       thumbnail: data.thumbnail,
+      click_through_url: data.click_through_url,
     };
   });
 
-  let topicsData: string[] = ArticleData[0].topics.map((data) => {
-    return data.name;
+  let topicsData: TopicsDataType[] = ArticleData[0].topics.map((data) => {
+    return { name: data.name, link: data.link };
   });
 
   let authorData: AuthorDataType = {

@@ -1,8 +1,9 @@
-@import '~bootstrap/scss/bootstrap.scss';
+@import "~bootstrap/scss/bootstrap.scss";
 @import "constants.scss";
 
-.navbar, .navbar-nav {
-  background-color: var( --c-background);
+.navbar,
+.navbar-nav {
+  background-color: var(--c-background);
 }
 nav .navbar-toggler {
   border: none;
@@ -14,12 +15,37 @@ nav .navbar-toggler:focus {
   color: var(--c-text);
   font-weight: 600;
 }
-.border-lg-bottom{
+.border-lg-bottom {
   border-bottom: $border-width solid $border-color !important;
 }
 
-@media only screen and (max-width: 920px) {
+.article-content-body li {
+  padding: 0 0 0 15px;
+  margin: 0 0 10px;
+  font-weight: normal;
+  font-size: var(--fs-text-m);
+  line-height: var(--lh-text-m);
+  position: relative;
+}
 
+.article-content-body li::marker {
+  color: var(--c-link);
+}
+
+a {
+  text-decoration-line: none;
+  color: var(--c-text);
+}
+
+a:hover {
+  color: var(--c-link-hover) !important;
+}
+
+.read-also-wrapper {
+  width: 238px;
+}
+
+@media only screen and (max-width: 920px) {
   nav .navbar-collapse {
     position: fixed;
     top: 59px;
@@ -30,7 +56,7 @@ nav .navbar-toggler:focus {
     display: block;
     transition: left 0.1s ease;
   }
-  nav .navbar-brand{
+  nav .navbar-brand {
     margin: auto;
   }
 
@@ -38,11 +64,15 @@ nav .navbar-toggler:focus {
     left: 0;
   }
 
-  .border-xl-top{
+  .border-xl-top {
     border-top: $border-width solid $border-color !important;
   }
 
-  nav .icon-label{
+  nav .icon-label {
     display: none;
+  }
+
+  .read-also-wrapper {
+    width: 50%;
   }
 }

@@ -2,8 +2,34 @@
   font-family: "Graphik-Semibold";
   src: local("Graphik-Semibold"),
    url("../assets/fonts/Graphik-Semibold.ttf") format("truetype");
-  }
+}
 
+@font-face {
+  font-family: "Graphik-Medium";
+  src: local("Graphik-Medium"),
+   url("../assets/fonts/Graphik-Medium.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: 'proximanova-regularit';
+  src: local("proximanova-regularit"),
+  url("../assets/fonts/Proxima-Nova-Reg-It.otf") format("opentype");
+}
+
+@font-face {
+  font-family: 'proximanova-semibold';
+  src: local("proximanova-semibold"),
+  url("../assets/fonts/Proxima-Nova-Sbold.otf") format("opentype");
+}
+
+@font-face {
+  font-family: 'proximanova-light';
+  src: local("proximanova-light"),
+  url("../assets/fonts/Proxima-Nova-Light.otf") format("opentype");
+}
+
+
+  
 html {
   line-height: 1.15;
   -webkit-text-size-adjust: 100%;

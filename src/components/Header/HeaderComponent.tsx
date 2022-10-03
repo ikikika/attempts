@@ -6,7 +6,7 @@ import Fade from "react-bootstrap/Fade";
 import Stack from "react-bootstrap/Stack";
 import { XLg, PersonFill, Search } from "react-bootstrap-icons";
 
-import Logo from "../../assets/logo.svg";
+import Logo from "../../assets/images/logo.svg";
 import HeaderData from "../../data/header.json";
 import useScrollPosition from "../../hooks/useScrollPosition";
 import useCheckScreenSize from "../../hooks/useCheckScreenSize";
@@ -49,7 +49,7 @@ const SecondaryNav = ({
     if (headerState === 1) {
       fontSize = 16;
     } else if (headerState === 2) {
-      fontSize = 14;
+      fontSize = 13;
     }
   }
 
@@ -85,11 +85,17 @@ const HeaderComponent = () => {
   useEffect(() => {
     if (scrollPosition < 76) {
       setHeaderState(1);
-    } else if (scrollPosition > 76) {
+    } else if (scrollPosition > 76 && scrollPosition < 176) {
       setHeaderState(2);
+    } else if (scrollPosition > 176) {
+      setHeaderState(3);
     }
   }, [scrollPosition]);
 
+  /*
+xxl xl lg - 176 state 3 with social
+md - 144 state 4 with 2 share
+*/
   return (
     <>
       <Navbar
@@ -110,7 +116,8 @@ const HeaderComponent = () => {
               <Navbar.Brand className="order-lg-0 order-1">
                 <img
                   style={
-                    headerState === 1 && screenSize > 3
+                    screenSize > 3 &&
+                    (headerState === 1 || !(headerState === 3))
                       ? styles.logo
                       : styles.logoShrink
                   }
@@ -118,22 +125,25 @@ const HeaderComponent = () => {
                   alt="logo"
                 />
               </Navbar.Brand>
-              <Stack
-                direction="horizontal"
-                gap={3}
-                className="flex-row order-2 order-lg-2 p-0"
-              >
-                <HeaderNavIconWithLabel
-                  headerState={headerState}
-                  icon={<PersonFill size={20} />}
-                  label="Sign In"
-                />
-                <HeaderNavIconWithLabel
-                  headerState={headerState}
-                  icon={<Search size={20} />}
-                  label="Search"
-                />
-              </Stack>
+              {headerState !== 3 && (
+                <Stack
+                  direction="horizontal"
+                  gap={3}
+                  className="flex-row order-2 order-lg-2 p-0"
+                >
+                  <HeaderNavIconWithLabel
+                    headerState={headerState}
+                    icon={<PersonFill size={20} />}
+                    label="Sign In"
+                  />
+                  <HeaderNavIconWithLabel
+                    headerState={headerState}
+                    icon={<Search size={20} />}
+                    label="Search"
+                  />
+                </Stack>
+              )}
+
               {headerState === 2 && (
                 <SecondaryNav
                   screenSize={screenSize}

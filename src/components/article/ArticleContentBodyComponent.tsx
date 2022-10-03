@@ -1,20 +1,43 @@
 import React from "react";
 import parse from "html-react-parser";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
-import ReadAlsoProps from "../../types/ReadAlsoProps";
+
+import ReadAlsoPropsType from "../../types/ReadAlsoPropsType";
 
 interface Props {
   contentBodyData: string | undefined;
-  readAlsoData: ReadAlsoProps[];
+  readAlsoData: ReadAlsoPropsType[];
 }
+
+const styles = {
+  readAlsoWrapper: {
+    backgroundColor: "var(--c-muted-accent-light)",
+  },
+  readAlsoLabel: {
+    fontSize: "var(--fs-text-xs)",
+    fontFamily: "var(--ff-text-xs)",
+    fontWeight: 600,
+    color: "var(--c-primary)",
+  },
+  readAlsoLink: {
+    fontSize: "var(--fs-text-xs)",
+    fontFamily: "var(--ff-text-xs)",
+    lineHeight: "var(--lh-h5)",
+  },
+};
 
 const ReadAlsoComponent = ({
   readAlsoSingleData,
 }: {
-  readAlsoSingleData: ReadAlsoProps;
+  readAlsoSingleData: ReadAlsoPropsType;
 }) => {
-  return <>{readAlsoSingleData.title}</>;
+  return (
+    <div className="read-also-wrapper mb-3 ms-3 p-3 float-end" style={styles.readAlsoWrapper}>
+      <h4 className="text-uppercase pb-0 mb-1" style={styles.readAlsoLabel}>Read Also</h4>
+      <a href={readAlsoSingleData.link} className="d-inline-block" style={styles.readAlsoLink}>
+        {readAlsoSingleData.title}
+      </a>
+    </div>
+  );
 };
 
 const ArticleContentBodyComponent = (props: Props) => {
@@ -49,7 +72,6 @@ const ArticleContentBodyComponent = (props: Props) => {
       } else {
         bodyWithReadAlso.push(data);
       }
-      
     });
   }
 
@@ -59,43 +81,31 @@ const ArticleContentBodyComponent = (props: Props) => {
         bodyWithReadAlso.map((data) => {
           if (data.type === "p") {
             return (
-              <Row key={data.key}>
-                <Col>
-                  <p>{data.props.children}</p>
-                </Col>
-              </Row>
+              <p key={data.key}>{data.props.children}</p>
             );
           } else if (data.type === "p+read_also") {
             const readOnlyIndex: number =
               data.key != null
                 ? parseInt(data.key.toString().replace("readAlso", ""))
                 : -1;
-
             return (
-              <Row key={data.key}>
-                <Col xs={8}>
-                  <p>{data.props}</p>
-                </Col>
-                <Col xs={4}>
-                  {readOnlyIndex !== -1 && (
-                    <ReadAlsoComponent
-                      readAlsoSingleData={readAlsoData[readOnlyIndex]}
-                    />
-                  )}
-                </Col>
-              </Row>
+              <React.Fragment key={data.key}>
+                <p>{data.props}</p>
+                {readOnlyIndex !== -1 && (
+                  <ReadAlsoComponent
+                    readAlsoSingleData={readAlsoData[readOnlyIndex]}
+                  />
+                )}
+              </React.Fragment>
             );
           } else {
             return (
-              <Row key={data.key}>
-                <Col>{data}</Col>
-              </Row>
+              <React.Fragment key={data.key}>{data}</React.Fragment>
             );
           }
         })}
     </>
   );
-
 };
 
 export default ArticleContentBodyComponent;

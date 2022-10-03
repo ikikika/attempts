@@ -4,32 +4,43 @@ import parse from "html-react-parser";
 import MediaImageType from "../../types/MediaImageType";
 
 interface Props {
-    mediaImageData: MediaImageType;
+  mediaImageData: MediaImageType;
 }
+
+const styles = {
+  byline: {
+    background: "var(--c-image-byline-bg)",
+    color: "var(--c-white-color)",
+    fontSize: "var(--fs-byline)",
+    fontWeight: 400,
+    fontFamily: "var(--ff-byline)",
+    lineHeight: "var(--lh-byline)",
+  },
+  caption: {
+    fontSize: "var(--fs-caption-l)",
+    lineHeight: "var(--lh-caption-l)",
+  },
+};
 
 const ArticleHeroImageComponent = ({ mediaImageData }: Props) => {
   return (
     <>
-      <div style={{ position: "relative" }}>
+      <div className="position-relative">
         <Image
           src={mediaImageData.src}
-          fluid={true}
-          alt="fgf"
-          style={{ backgroundColor: "green" }}
+          alt={mediaImageData.byline}
+          className="w-100"
         />
         <div
-          style={{
-            backgroundColor: "var(--c-image-overlay)",
-            color: "var(--c-text-inverse)",
-            position: "absolute",
-            bottom: 0,
-            right: 0,
-          }}
+          className="position-absolute bottom-0 end-0 p-2"
+          style={styles.byline}
         >
           {mediaImageData.byline}
         </div>
       </div>
-      <div>{parse(mediaImageData.description)}</div>
+      <div className="mt-2" style={styles.caption}>
+        {parse(mediaImageData.description)}
+      </div>
     </>
   );
 };
