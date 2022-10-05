@@ -11,9 +11,10 @@ import ArticleContentBodyComponent from "../components/article/ArticleContentBod
 import BylineComponent from "../components/article/BylineComponent";
 import ReadMoreComponent from "../components/article/ReadMoreComponent";
 import SubscribeComponent from "../components/article/SubscribeComponent";
-import { useAppSelector } from "../hooks/reduxHooks";
+import { useAppDispatch, useAppSelector } from "../hooks/reduxHooks";
 import { RootState } from "../redux/store";
 import ScrollToTopComponent from "../components/common/ScrollToTopComponent";
+import { articleActions } from "../redux/articleSlice";
 
 const styles = {
   articleTitle: {
@@ -28,54 +29,65 @@ const styles = {
 const ArticlePage = () => {
   const article = useAppSelector((state: RootState) => state.article);
 
+  const dispatch = useAppDispatch();
+
   useEffect(() => {
-    document.title = article.data.title;
-  });
+    dispatch(articleActions.loadArticleData());
+    if (Object.keys(article).length !== 0) {
+      document.title = article.data.title;
+    }
+  }, [article, dispatch]);
 
   return (
-    <Container className="mt-2 mb-5">
-      <Row>
-        <Col lg={{ span: 12, order: 1 }}>
-          <h1 style={styles.articleTitle}>{article.data.title}</h1>
-        </Col>
-      </Row>
-      <Row>
-        <Col lg={{ span: 4, order: 3 }}>
-          <BylineComponent
-            publishedDate={article.data.publishedDate}
-            updatedDate={article.data.updatedDate}
-            authorData={article.data.authorData}
-          />
-        </Col>
-        <Col lg={{ span: 8, order: 2 }}>
-          <ArticleHeroImageComponent
-            mediaImageData={article.data.mediaImageData}
-          />
-        </Col>
-      </Row>
-      <Row>
-        <Col lg={8}>
-          <FollowUsComponent />
-        </Col>
-      </Row>
-      <Row>
-        <Col lg={{ span: 8 }} className="article-content-body">
-          <ArticleContentBodyComponent
-            contentBodyData={article.data.articleContent}
-            readAlsoData={article.data.readAlsoData}
-          />
-          <RelatedTopicsComponent topicsData={article.data.topicsData} />
-          <ReadMoreComponent />
-        </Col>
-        <Col lg={{ span: 4 }}>
-          <SidebarPopularComponent />
-        </Col>
-        <Col lg={{ span: 8 }}>
-          <SubscribeComponent />
-        </Col>
-      </Row>
-      <ScrollToTopComponent />
-    </Container>
+    <>
+      {Object.keys(article.data).length !== 0 ? (
+        <Container className="mt-2 mb-5">
+          <Row>
+            <Col lg={{ span: 12, order: 1 }}>
+              <h1 style={styles.articleTitle}>{article.data.title}</h1>
+            </Col>
+          </Row>
+          <Row>
+            <Col lg={{ span: 4, order: 3 }}>
+              <BylineComponent
+                publishedDate={article.data.publishedDate}
+                updatedDate={article.data.updatedDate}
+                authorData={article.data.authorData}
+              />
+            </Col>
+            <Col lg={{ span: 8, order: 2 }}>
+              <ArticleHeroImageComponent
+                mediaImageData={article.data.mediaImageData}
+              />
+            </Col>
+          </Row>
+          <Row>
+            <Col lg={8}>
+              <FollowUsComponent />
+            </Col>
+          </Row>
+          <Row>
+            <Col lg={{ span: 8 }} className="article-content-body">
+              <ArticleContentBodyComponent
+                contentBodyData={article.data.articleContent}
+                readAlsoData={article.data.readAlsoData}
+              />
+              <RelatedTopicsComponent topicsData={article.data.topicsData} />
+              <ReadMoreComponent />
+            </Col>
+            <Col lg={{ span: 4 }}>
+              <SidebarPopularComponent />
+            </Col>
+            <Col lg={{ span: 8 }}>
+              <SubscribeComponent />
+            </Col>
+          </Row>
+          <ScrollToTopComponent />
+        </Container>
+      ) : (
+        <>Article does not exist</>
+      )}
+    </>
   );
 };
 

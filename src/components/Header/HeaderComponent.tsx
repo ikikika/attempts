@@ -10,10 +10,11 @@ import Logo from "../../assets/images/logo.svg";
 import useScrollPosition from "../../hooks/useScrollPosition";
 import useCheckScreenSize from "../../hooks/useCheckScreenSize";
 import HeaderNavIconWithLabel from "./HeaderNavIconWithLabel";
-import { useAppSelector } from "../../hooks/reduxHooks";
+import { useAppDispatch, useAppSelector } from "../../hooks/reduxHooks";
 import { RootState } from "../../redux/store";
 import CategoryDataType from "../../types/CategoryDataType";
 import SocialMediaWrapperComponent from "./SocialMediaWrapperComponent";
+import { headerActions } from "../../redux/headerSlice";
 
 const styles = {
   logo: {
@@ -47,12 +48,18 @@ const SecondaryNav = ({
 
   const header = useAppSelector((state: RootState) => state.header);
 
+  const dispatch = useAppDispatch();
+
   useEffect(() => {
     setShow(true);
     return () => {
       setShow(false);
     };
   }, []);
+
+  useEffect(()=>{
+    dispatch(headerActions.loadHeaderData());
+  }, [dispatch]);
 
   let fontSize = 16;
 
@@ -77,7 +84,7 @@ const SecondaryNav = ({
         className={`${!show ? "fade" : ""}`}
       >
         <Nav className="w-100 justify-content-between">
-          {header.data.map((data, index) => (
+          {header.data.length > 0 && header.data.map((data, index) => (
             <Nav.Link
               href={data.url}
               key={index}

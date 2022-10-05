@@ -31,25 +31,31 @@ const articleData: ArticleDataType = {
   authorData: authorData,
   category: {
     name: ArticleData[0].category[0].name,
-    link: ArticleData[0].category[0].link
+    link: ArticleData[0].category[0].link,
   },
   subscriptionBoxData: {
     body: ArticleData[0].content[1].body,
     placeholder: ArticleData[0].content[1].placeholder,
     sub_description: ArticleData[0].content[1].sub_description,
     title: ArticleData[0].content[1].title,
-    label: ArticleData[0].content[1].label
-  }
+    label: ArticleData[0].content[1].label,
+  },
 };
+
+const initialState = { data: {} };
 
 export const articleSlice = createSlice({
   name: "article",
-  initialState: {
-    data: articleData,
-  } as {
+  initialState: initialState as {
     data: ArticleDataType;
   },
-  reducers: {},
+  reducers: {
+    loadArticleData(state) {
+      state.data = articleData;
+    },
+  },
 });
+
+export const articleActions = articleSlice.actions;
 
 export default articleSlice.reducer;

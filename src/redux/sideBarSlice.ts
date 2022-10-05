@@ -10,12 +10,18 @@ const sidebarData: SideBarPropsType[] = SidebarPopularData.items.map((data) => {
   };
 });
 
+const initialState = { data: {} };
+
 export const sidebarSlice = createSlice({
   name: "sidebar",
-  initialState: {
-    data: sidebarData,
-  } as { data: SideBarPropsType[] },
-  reducers: {},
+  initialState: initialState as { data: SideBarPropsType[] },
+  reducers: {
+    loadSidebarData(state) {
+      state.data = sidebarData;
+    },
+  },
 });
+
+export const sidebarActions = sidebarSlice.actions;
 
 export default sidebarSlice.reducer;
