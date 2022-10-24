@@ -1,0 +1,151 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`HeaderComponent matches snapshot 1`] = `
+<nav
+  className="border-bottom sticky-top navbar navbar-expand-lg navbar-light"
+>
+  <div
+    className="container"
+  >
+    <div
+      className="d-flex flex-column w-100 justify-content-between navbar-nav"
+      onKeyDown={[Function]}
+    >
+      <div
+        className="d-flex flex-row justify-content-between pb-lg-4 navbar-nav"
+        onKeyDown={[Function]}
+      >
+        <span
+          className="order-lg-0 order-1 navbar-brand"
+        >
+          <img
+            alt="logo"
+            src="logo.svg"
+            style={
+              Object {
+                "height": 42,
+              }
+            }
+          />
+        </span>
+        <div
+          className="flex-row order-2 order-lg-2 p-0 hstack gap-3 minBreakpoint-xs"
+        >
+          <div
+            className="nav-item"
+          >
+            <a
+              className="nav-link"
+              data-rr-ui-event-key={null}
+              href="#"
+              onClick={[Function]}
+              onKeyDown={[Function]}
+              role="button"
+              tabIndex={0}
+            >
+              <svg
+                fill="currentColor"
+                height={20}
+                viewBox="0 0 16 16"
+                width={20}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"
+                />
+              </svg>
+               
+              <span
+                className="icon-label"
+              >
+                Sign In
+              </span>
+            </a>
+          </div>
+          <div
+            className="nav-item"
+          >
+            <a
+              className="nav-link"
+              data-rr-ui-event-key={null}
+              href="#"
+              onClick={[Function]}
+              onKeyDown={[Function]}
+              role="button"
+              tabIndex={0}
+            >
+              <svg
+                fill="currentColor"
+                height={20}
+                viewBox="0 0 16 16"
+                width={20}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"
+                />
+              </svg>
+               
+              <span
+                className="icon-label"
+              >
+                Search
+              </span>
+            </a>
+          </div>
+        </div>
+        <button
+          aria-controls="basic-navbar-nav"
+          aria-label="Toggle navigation"
+          className="order-lg-3 order-0 navbar-toggler collapsed"
+          onClick={[Function]}
+          type="button"
+        >
+          <span
+            className="navbar-toggler-icon"
+          />
+        </button>
+      </div>
+      <div
+        aria-expanded={null}
+        className="fade fade navbar-collapse collapse"
+        id="basic-navbar-nav"
+      >
+        <div
+          className="w-100 justify-content-between navbar-nav"
+          onKeyDown={[Function]}
+        >
+          <a
+            className="p-lg-2 p-3 border-xl-top nav-link"
+            data-rr-ui-event-key="elit.com"
+            disabled={false}
+            href="elit.com"
+            onClick={[Function]}
+            style={
+              Object {
+                "fontSize": 14,
+              }
+            }
+          >
+            adipis
+          </a>
+          <a
+            className="p-lg-2 p-3 border-xl-top nav-link"
+            data-rr-ui-event-key="tempor.com"
+            disabled={false}
+            href="tempor.com"
+            onClick={[Function]}
+            style={
+              Object {
+                "fontSize": 14,
+              }
+            }
+          >
+            sed do
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+`;

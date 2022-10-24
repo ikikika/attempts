@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ArticleHeroImageComponent matches snapshot 1`] = `
+Array [
+  <div
+    className="position-relative"
+  >
+    <img
+      alt="lorem"
+      className="w-100"
+      src="test.png"
+    />
+    <div
+      className="position-absolute bottom-0 end-0 p-2"
+      style={
+        Object {
+          "background": "var(--c-image-byline-bg)",
+          "color": "var(--c-white-color)",
+          "fontFamily": "var(--ff-byline)",
+          "fontSize": "var(--fs-byline)",
+          "fontWeight": 400,
+          "lineHeight": "var(--lh-byline)",
+        }
+      }
+    >
+      lorem
+    </div>
+  </div>,
+  <div
+    className="mt-2"
+    style={
+      Object {
+        "fontSize": "var(--fs-caption-l)",
+        "lineHeight": "var(--lh-caption-l)",
+      }
+    }
+  >
+    ipsum
+  </div>,
+]
+`;

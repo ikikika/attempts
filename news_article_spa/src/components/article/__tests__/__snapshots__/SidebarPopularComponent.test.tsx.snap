@@ -1,0 +1,95 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SidebarPopularComponent matches snapshot 1`] = `
+<div
+  className="mb-5"
+>
+  <div
+    className="row"
+  >
+    <div
+      className="col"
+    >
+      <div
+        className="pt-0 pb-3 mb-0"
+        style={
+          Object {
+            "color": "var(--c-heading)",
+            "fontFamily": "var(--ff-also-worth)",
+            "fontSize": "var(--fs-also-worth)",
+            "fontWeight": 600,
+            "lineHeight": "var(--lh-also-worth)",
+          }
+        }
+      >
+        Popular
+      </div>
+    </div>
+  </div>
+  <div
+    className="row"
+  >
+    <div
+      className="col-lg-5 col-md-3 col-5"
+    >
+      <a
+        href="dolor.com"
+      >
+        <img
+          className="img-fluid"
+          src="ipsum.png"
+        />
+      </a>
+    </div>
+    <div
+      className="col-lg-7 col-md-9 col-7"
+    >
+      <a
+        className="d-inline-block"
+        href="dolor.com"
+        style={
+          Object {
+            "fontSize": 14,
+            "fontWeight": 600,
+          }
+        }
+      >
+        lorem
+      </a>
+    </div>
+  </div>
+  <hr />
+  <div
+    className="row"
+  >
+    <div
+      className="col-lg-5 col-md-3 col-5"
+    >
+      <a
+        href="consecteur.com"
+      >
+        <img
+          className="img-fluid"
+          src="amet.png"
+        />
+      </a>
+    </div>
+    <div
+      className="col-lg-7 col-md-9 col-7"
+    >
+      <a
+        className="d-inline-block"
+        href="consecteur.com"
+        style={
+          Object {
+            "fontSize": 14,
+            "fontWeight": 600,
+          }
+        }
+      >
+        sit
+      </a>
+    </div>
+  </div>
+</div>
+`;

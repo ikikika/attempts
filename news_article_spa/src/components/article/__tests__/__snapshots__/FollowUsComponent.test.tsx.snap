@@ -1,0 +1,66 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FollowUsComponent matches snapshot 1`] = `
+<div
+  className="p-2 mb-2 mb-lg-4 text-center"
+  style={
+    Object {
+      "backgroundColor": "#eee",
+      "borderTop": "1px solid red",
+      "fontSize": 14,
+    }
+  }
+>
+  Follow us on
+   
+  <a
+    href="https://www.instagram.com/todayonline/"
+    rel="instagram noreferrer"
+    style={
+      Object {
+        "color": "var(--c-link)",
+        "fontWeight": "bold",
+        "textDecoration": "none",
+      }
+    }
+    target="_blank"
+  >
+    Instagram
+  </a>
+   
+  and
+   
+  <a
+    href="https://www.tiktok.com/@todayonline"
+    rel="tiktok noreferrer"
+    style={
+      Object {
+        "color": "var(--c-link)",
+        "fontWeight": "bold",
+        "textDecoration": "none",
+      }
+    }
+    target="_blank"
+  >
+    Tiktok
+  </a>
+  , and join our
+   
+  <a
+    href="https://t.me/todayonlinesg"
+    rel="telegram noreferrer"
+    style={
+      Object {
+        "color": "var(--c-link)",
+        "fontWeight": "bold",
+        "textDecoration": "none",
+      }
+    }
+    target="_blank"
+  >
+    Telegram
+  </a>
+   
+  channel for the latest updates.
+</div>
+`;

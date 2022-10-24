@@ -1,0 +1,66 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RelatedTopicsComponent matches snapshot 1`] = `
+<div
+  className="pt-0 pb-3 mb-4"
+  style={
+    Object {
+      "borderBottom": "solid 1px var(--c-border)",
+    }
+  }
+>
+  <hr
+    className="d-lg-none"
+  />
+  <div
+    className="text-uppercase mb-4"
+    style={
+      Object {
+        "color": "var(--c-heading)",
+        "fontFamily": "var(--ff-topics-h2)",
+        "fontSize": "var(--fs-topics-h2)",
+        "fontWeight": 600,
+        "lineHeight": "var(--lh-topics-h2)",
+      }
+    }
+  >
+    Related Topics
+  </div>
+  <a
+    className="d-inline-block px-2 py-1 mx-1 mt-1 mb-0 text-uppercase"
+    href="https://www.todayonline.comipsum.com"
+    rel="noreferrer"
+    style={
+      Object {
+        "border": "solid 1px var(--c-border)",
+        "fontFamily": "var(--ff-topics-link)",
+        "fontSize": "var(--fs-topics-link)",
+        "fontWeight": 400,
+        "letterSpacing": -0.23,
+        "lineHeight": "var(--lh-topics-link)",
+      }
+    }
+    target="_blank"
+  >
+    lorem
+  </a>
+  <a
+    className="d-inline-block px-2 py-1 mx-1 mt-1 mb-0 text-uppercase"
+    href="https://www.todayonline.comamet.com"
+    rel="noreferrer"
+    style={
+      Object {
+        "border": "solid 1px var(--c-border)",
+        "fontFamily": "var(--ff-topics-link)",
+        "fontSize": "var(--fs-topics-link)",
+        "fontWeight": 400,
+        "letterSpacing": -0.23,
+        "lineHeight": "var(--lh-topics-link)",
+      }
+    }
+    target="_blank"
+  >
+    dolor sit
+  </a>
+</div>
+`;

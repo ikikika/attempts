@@ -1,0 +1,82 @@
+@import "~bootstrap/scss/bootstrap.scss";
+@import "constants.scss";
+
+
+body {
+  background-color: var(--c-body-bg);
+  color: var(--c-text);
+  overflow-x: hidden;
+  font-size: var(--fs-text);
+  font-weight: var(--fw-text);
+  font-family: var(--ff-text);
+  line-height: var(--lh-text);
+  font-weight: 300;
+}
+
+.navbar,
+.navbar-nav {
+  background-color: var(--c-background);
+}
+nav .navbar-toggler {
+  border: none;
+}
+nav .navbar-toggler:focus {
+  box-shadow: none;
+}
+.navbar-expand-lg .navbar-nav .nav-link {
+  color: var(--c-text);
+  font-weight: 600;
+}
+
+.article-content-body li {
+  padding: 0 0 0 15px;
+  margin: 0 0 10px;
+  font-weight: normal;
+  font-size: var(--fs-text-m);
+  line-height: var(--lh-text-m);
+  position: relative;
+  list-style-type: square;
+}
+
+.article-content-body li::marker {
+  color: var(--c-link);
+}
+
+a {
+  text-decoration-line: none;
+  color: var(--c-text);
+}
+
+a:hover {
+  color: var(--c-link-hover) !important;
+}
+
+
+@media only screen and (max-width: 920px) {
+  nav .navbar-collapse {
+    position: fixed;
+    top: 59px;
+    background: var(--c-menu-overlay);
+    left: -100%;
+    width: 100vw;
+    height: 100vh;
+    display: block;
+    transition: left 0.1s ease;
+  }
+  nav .navbar-brand {
+    margin: auto;
+  }
+
+  nav .navbar-collapse.show {
+    left: 0;
+  }
+
+  .border-xl-top {
+    border-top: $border-width solid $border-color !important;
+  }
+
+  nav .icon-label {
+    display: none;
+  }
+
+}
