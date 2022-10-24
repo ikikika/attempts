@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Requirements
 1. Node v16
 1. NPM v8
@@ -51,3 +52,6 @@ Time:        10.023 s
 1. Refactor with redux
 1. Unit tests 
 
+=======
+# attempts
+>>>>>>> 1d0d872 (Initial commit)
