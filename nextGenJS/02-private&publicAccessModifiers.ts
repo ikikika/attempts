@@ -1,13 +1,16 @@
 class Department {
-  public name: string;
+  // private id: string;
+  // private name: string;
   private employees: string[] = [];
 
-  constructor(n: string) {
-    this.name = n;
+  constructor(private id: string, public name: string) {
+    // shorthand initialisation, properties will be created here with the stated names
+    // this.id = id;
+    // this.name = n;
   }
 
   describe(this: Department) {
-    console.log("Department: " + this.name);
+    console.log(`Department (${this.id}): ${this.name}`);
   }
 
   addEmployee(employee: string) {
@@ -21,15 +24,15 @@ class Department {
   }
 }
 
-const accounting = new Department("Accounting");
+const accounting = new Department("d1", "Accounting");
 
 accounting.addEmployee("Max"); // change the private array from the outside
 accounting.addEmployee("Manu");
 
-// accounting.employees[2] = 'Anna';
+// accounting.employees[2] = 'Anna'; // cannot access from outside because private property
 
 accounting.describe();
-accounting.name = "NEW NAME";
+accounting.name = "NEW NAME"; // can access from outside because public property
 accounting.printEmployeeInformation();
 
 // const accountingCopy = { name: 'DUMMY', describe: accounting.describe };
