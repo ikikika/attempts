@@ -1,9 +1,9 @@
 class Department {
-  // private id: string;
+  // private readonly id: string;
   // private name: string;
   private employees: string[] = [];
 
-  constructor(private id: string, public name: string) {
+  constructor(private readonly id: string, public name: string) {
     // shorthand initialisation, properties will be created here with the stated names
     // this.id = id;
     // this.name = n;
@@ -16,6 +16,7 @@ class Department {
   addEmployee(employee: string) {
     // validation etc
     this.employees.push(employee);
+    // this.id = "d2"; // this will fail
   }
 
   printEmployeeInformation() {
@@ -24,7 +25,7 @@ class Department {
   }
 }
 
-const accounting = new Department("d1", "Accounting");
+const accounting = new Department("d1", "Accounting"); // we wont be able to change the id as it is read only
 
 accounting.addEmployee("Max"); // change the private array from the outside
 accounting.addEmployee("Manu");
