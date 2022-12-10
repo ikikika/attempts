@@ -4,7 +4,6 @@ class Department {
   private employees: string[] = [];
 
   constructor(private readonly id: string, public name: string) {
-    // shorthand initialisation, properties will be created here with the stated names
     // this.id = id;
     // this.name = n;
   }
@@ -15,8 +14,8 @@ class Department {
 
   addEmployee(employee: string) {
     // validation etc
+    // this.id = 'd2';
     this.employees.push(employee);
-    // this.id = "d2"; // this will fail
   }
 
   printEmployeeInformation() {
@@ -25,16 +24,51 @@ class Department {
   }
 }
 
-const accounting = new Department("d1", "Accounting"); // we wont be able to change the id as it is read only
+class ITDepartment extends Department {
+  // this is a new class, but it inherits the Department class
+  admins: string[];
+  constructor(id: string, admins: string[]) {
+    super(id, "IT");
+    // whenever u have ur own constructor in a class that inherits another class, u need to use super
+    // super calls the constructor of the base class
+    // super takes the arguments of the parent class constructor
+    // have to call super first before using "this" keyword
+    this.admins = admins;
+  }
+}
 
-accounting.addEmployee("Max"); // change the private array from the outside
-accounting.addEmployee("Manu");
+class AccountingDepartment extends Department {
+  constructor(id: string, private reports: string[]) {
+    super(id, "Accounting");
+  }
 
-// accounting.employees[2] = 'Anna'; // cannot access from outside because private property
+  addReport(text: string) {
+    this.reports.push(text);
+  }
 
-accounting.describe();
-accounting.name = "NEW NAME"; // can access from outside because public property
-accounting.printEmployeeInformation();
+  printReports() {
+    console.log(this.reports);
+  }
+}
+
+const it = new ITDepartment("d1", ["Max"]);
+
+it.addEmployee("Max");
+it.addEmployee("Manu");
+
+// it.employees[2] = 'Anna';
+
+it.describe();
+it.name = "NEW NAME";
+it.printEmployeeInformation();
+
+console.log(it);
+
+const accounting = new AccountingDepartment("d2", []);
+
+accounting.addReport("Something went wrong...");
+
+accounting.printReports();
 
 // const accountingCopy = { name: 'DUMMY', describe: accounting.describe };
 
