@@ -1,7 +1,9 @@
 class Department {
   // private readonly id: string;
   // private name: string;
-  private employees: string[] = [];
+  protected employees: string[] = [];
+  // private cannot be accessed outside this class
+  // if we want to inherit this property, we need to use protected
 
   constructor(private readonly id: string, public name: string) {
     // this.id = id;
@@ -25,14 +27,9 @@ class Department {
 }
 
 class ITDepartment extends Department {
-  // this is a new class, but it inherits the Department class
   admins: string[];
   constructor(id: string, admins: string[]) {
     super(id, "IT");
-    // whenever u have ur own constructor in a class that inherits another class, u need to use super
-    // super calls the constructor of the base class
-    // super takes the arguments of the parent class constructor
-    // have to call super first before using "this" keyword
     this.admins = admins;
   }
 }
@@ -40,6 +37,13 @@ class ITDepartment extends Department {
 class AccountingDepartment extends Department {
   constructor(id: string, private reports: string[]) {
     super(id, "Accounting");
+  }
+
+  addEmployee(name: string) {
+    if (name === "Max") {
+      return;
+    }
+    this.employees.push(name);
   }
 
   addReport(text: string) {
@@ -68,7 +72,11 @@ const accounting = new AccountingDepartment("d2", []);
 
 accounting.addReport("Something went wrong...");
 
+accounting.addEmployee("Max");
+accounting.addEmployee("Manu");
+
 accounting.printReports();
+accounting.printEmployeeInformation();
 
 // const accountingCopy = { name: 'DUMMY', describe: accounting.describe };
 
